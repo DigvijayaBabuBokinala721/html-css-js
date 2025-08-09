@@ -1,0 +1,37 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 200px;
+  padding: 8px 20px;
+  border: 2px solid skyblue;
+  background-color: black;
+  color: white;
+  font-family: "Rock Salt", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.btn::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(120deg, transparent, cyan, blue, transparent);
+  transform: translate(-100%);
+  transition: 0.6s;
+}
+.btn:hover::before {
+  transform: translate(100%);
+}
