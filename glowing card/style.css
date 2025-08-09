@@ -1,0 +1,61 @@
+body {
+  background-color: black;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.glow {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.649);
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: white;
+  text-shadow: 0px 0px 50px blue, 0px 0px 50px white;
+  border-radius: 25px;
+  font-family: "Rock Salt", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.glow::after,
+.glow::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  background: rgb(6, 237, 207);
+  background: linear-gradient(
+    145deg,
+    rgba(6, 237, 207, 1) 42%,
+    rgba(118, 70, 252, 1) 49%,
+    rgba(6, 237, 207, 1) 49%,
+    rgba(69, 237, 6, 1) 60%,
+    rgba(222, 231, 11, 1) 62%,
+    violet,
+    violet,
+    black
+  );
+  background-size: 400%;
+  animation: move 15s linear infinite;
+  z-index: -1;
+  border-radius: 15px;
+}
+.glow::after {
+  filter: blur(30px);
+}
+@keyframes move {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 400% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
